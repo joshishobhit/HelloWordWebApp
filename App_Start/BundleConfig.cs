@@ -21,7 +21,15 @@ namespace HelloWord2
                             "~/Scripts/WebForms/DetailsView.js",
                             "~/Scripts/WebForms/TreeView.js",
                             "~/Scripts/WebForms/WebParts.js"));
+                            
+            bundles.Add(new ScriptBundle("~/bundles/BootJquery").Include(
+                            "~/Scripts/bootstrap.min.js",
+                            "~/Scripts/jquery-3.4.1.min.js",
+                            "~/Scripts/bootstrap-datepicker.min.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/datePicker").Include(
+                            "~/Scripts/bootstrap-datepicker.min.js"));
+            
             // Order is very important for these files to work, they have explicit dependencies
             bundles.Add(new ScriptBundle("~/bundles/MsAjaxJs").Include(
                     "~/Scripts/WebForms/MsAjax/MicrosoftAjax.js",
@@ -33,6 +41,11 @@ namespace HelloWord2
             // ready for production, use the build tool at https://modernizr.com to pick only the tests you need
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                             "~/Scripts/modernizr-*"));
+                            
+            bundles.Add(new StyleBundle("~/bundles/css").Include(
+                            "~/Content/bootstrap.min.css",
+                            "~/Content/bootstrap-theme.min.css"));
+                           
         }
     }
 }
