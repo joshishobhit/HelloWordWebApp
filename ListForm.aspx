@@ -13,6 +13,11 @@
         <asp:PlaceHolder runat="server">
                 <%: Scripts.Render("~/bundles/datePicker") %>
         </asp:PlaceHolder>
+        <style>
+            .error-message{
+                position:absolute;
+            }
+        </style>
     <title></title>
 </head>
 <body>
@@ -44,13 +49,17 @@
                         <div class="input-group">
                                 <span class="input-group-addon" id="basic-addon2">DOB</span>
                                 <asp:TextBox ID="TextBoxDOB" CLASS="form-control date-picker" aria-describedby="basic-addon2" runat="server" placeholder="Choose DOB"></asp:TextBox>
-                              </div> 
+                        </div>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorName" class="error-message" runat="server" ErrorMessage="Please Enter DOB" ControlToValidate="TextBoxDOB" BorderColor="#FF3300" SetFocusOnError="True" ForeColor="#FF3300"></asp:RequiredFieldValidator>
+                        
                 </div>
                 <div class="col-sm-3" style = "margin-top:10px;">
                         <div class="input-group">
                                 <span class="input-group-addon" id="basic-addon3">Role</span>
                                 <asp:DropDownList ID="DropDownListRole" CLASS="form-control" runat="server"></asp:DropDownList>
                               </div> 
+                              <asp:RequiredFieldValidator ID="RequiredFieldValidatorRole" class="error-message" InitialValue="0" runat="server" ErrorMessage="Please Select Role" ControlToValidate="DropDownListRole" BorderColor="#FF3300" SetFocusOnError="True" ForeColor="#FF3300"></asp:RequiredFieldValidator>                    
+                    
                 </div>
                 <div class="col-sm-3" style = "margin-top:10px; ">
                         <asp:Button ID="ButtonSearch" CLASS="pull-right btn btn-primary" runat="server" Text="Search" OnClick="ButtonSearch_Click" />     
