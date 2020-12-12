@@ -18,10 +18,6 @@ namespace HelloWord2
             }
 
             var i = 0;
-
-            var t = 5;
-            var s = t / i;
-
         }
 
         protected void ButtonSearch_Click(object sender, EventArgs e)
